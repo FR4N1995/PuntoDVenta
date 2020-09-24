@@ -12,6 +12,9 @@
 ================================================== -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/main-color.css" id="colors">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </head>
 
@@ -212,13 +215,25 @@
                 <div class="dashboard-nav-inner">
 
                     <ul data-submenu-title="Main">
-                        <li><a href="index.html"><i class="sl sl-icon-bag"></i> Productos</a></li>
-                        <li><a href="ventas.html"><i class="sl sl-icon-chart"></i> Ventas <span class="nav-tag messages">2</span></a></li>
+                        <li><a href="#"><i class="sl sl-icon-bag"></i> Productos</a>
+                            <ul>
+                                <li><a href="index.html">Añadir Productos </a></li>
+                                <li><a href="verProductos.html">Ver Productos <span class="nav-tag yellow">1</span></a></li>
+
+                            </ul>
+                        </li>
+                        <li><a><i class="sl sl-icon-chart"></i> Ventas <span class="nav-tag messages">2</span></a>
+                            <ul>
+                                <li><a href="dashboard-my-listings.html">Hacer Venta </a></li>
+                                <li><a href="ventas.html">Ver Ventas <span class="nav-tag yellow">1</span></a></li>
+
+                            </ul>
+                        </li>
                         <li><a href="horarios.html"><i class="fa fa-calendar"></i> Horarios</a></li>
                         <li><a href="#"><i class="fa fa-user"></i> Empleados</a></li>
+                        <li><a href=""><i class="fa fa-user"></i> Proveedores</a></li>
                         <li><a href="pedidos.html"><i class="fa fa-send"></i> Pedidos</a></li>
                         <li><a href="contabilidad.html"><i class="fa fa-calculator"></i> Contabilidad</a></li>
-
 
                     </ul>
                     <!--
@@ -245,6 +260,72 @@
             </div>
             <!-- Navigation / End -->
 
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Estas seguro que Deseas Eliminar a este Empleado</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="button" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="button">Si</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Modal PAra editar-->
+            <div class="modal fade" id="editar" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="z-index: 110111111;">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Editar Empleado</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Nombre:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Color:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">Talla:</label>
+                                    <input type="text" class="form-control" id="recipient-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">Precio Mayoreo:</label>
+                                    <input type="number" class="form-control" id="message-text">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">Precio Mayoreo:</label>
+                                    <input type="number" class="form-control" id="message-text">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">Precio Mayoreo:</label>
+                                    <input type="number" class="form-control" id="message-text">
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="button" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="button">Si</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Content
 	================================================== -->
@@ -279,7 +360,7 @@
                 <!-- Content -->
 
 
-                <div class="row">
+                <div class="">
 
                     <div class="add-listing-section">
 
@@ -339,7 +420,7 @@
                     </div>
 
 
-                    <div class="col-md-12">
+                    <div class="col-md-12" style="font-size: 1.6rem;">
 
                         <h4 class="headline margin-top-70 margin-bottom-30">Empleados Registrados</h4>
                         <table class="basic-table">
@@ -368,7 +449,8 @@
                                 <td data-label="Column 1" class="text-center">$230</td>
                                 <td data-label="Column 2" class="text-center">$230</td>
                                   -->
-                                <td><a href=""><i class="sl sl-icon-trash"></i></a></td>
+                                <td><a href="" class="" data-toggle="modal" data-target="#exampleModalCenter"><i class="sl sl-icon-trash fa-2x"></i></a></td>
+                                <td><a href="" data-toggle="modal" data-target="#editar" data-whatever="@mdo"><i class="fa fa-edit fa-2x"></i></a></td>
 
                             </tr>
 
@@ -383,7 +465,8 @@
                                 <td data-label="Column 1" class="text-center">$230</td>
                                 <td data-label="Column 2" class="text-center">$230</td>
                                  -->
-                                <td><a href=""><i class="sl sl-icon-trash"></i></a></td>
+                                <td><a href="" class="" data-toggle="modal" data-target="#exampleModalCenter"><i class="sl sl-icon-trash fa-2x"></i></a></td>
+                                <td><a href="" data-toggle="modal" data-target="#editar" data-whatever="@mdo"><i class="fa fa-edit fa-2x"></i></a></td>
 
                             </tr>
 
@@ -398,7 +481,8 @@
                                 <td data-label="Column 1" class="text-center">$230</td>
                                 <td data-label="Column 2" class="text-center">$230</td>
                                 -->
-                                <td><a href=""><i class="sl sl-icon-trash"></i></a></td>
+                                <td><a href="" class="" data-toggle="modal" data-target="#exampleModalCenter"><i class="sl sl-icon-trash fa-2x"></i></a></td>
+                                <td><a href="" data-toggle="modal" data-target="#editar" data-whatever="@mdo"><i class="fa fa-edit fa-2x"></i></a></td>
 
                             </tr>
 
@@ -413,7 +497,8 @@
                                 <td data-label="Column 1" class="text-center">$230</td>
                                 <td data-label="Column 2" class="text-center">$230</td>
                                 -->
-                                <td><a href=""><i class="sl sl-icon-trash"></i></a></td>
+                                <td><a href="" class="" data-toggle="modal" data-target="#exampleModalCenter"><i class="sl sl-icon-trash fa-2x"></i></a></td>
+                                <td><a href="" data-toggle="modal" data-target="#editar" data-whatever="@mdo"><i class="fa fa-edit fa-2x"></i></a></td>
 
                             </tr>
                         </table>
@@ -444,6 +529,9 @@
 
     <!-- Scripts
 ================================================== -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js " integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js " integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6 " crossorigin="anonymous "></script>
     <script type="text/javascript" src="scripts/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="scripts/jquery-migrate-3.1.0.min.js"></script>
     <script type="text/javascript" src="scripts/mmenu.min.js"></script>

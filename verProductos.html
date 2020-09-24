@@ -221,14 +221,14 @@
                         </li>
                         <li><a><i class="sl sl-icon-chart"></i> Ventas <span class="nav-tag messages">2</span></a>
                             <ul>
-                                <li><a href="dashboard-my-listings.html">Hacer Venta </a></li>
+                                <li><a href="hacerVenta.html">Hacer Venta </a></li>
                                 <li><a href="ventas.html">Ver Ventas <span class="nav-tag yellow">1</span></a></li>
 
                             </ul>
                         </li>
                         <li><a href="horarios.html"><i class="fa fa-calendar"></i> Horarios</a></li>
                         <li><a href="empleados.html"><i class="fa fa-user"></i> Empleados</a></li>
-                        <li><a href=""><i class="fa fa-user"></i> Proveedores</a></li>
+                        <li><a href="#"><i class="fa fa-user"></i> Proveedores</a></li>
                         <li><a href="pedidos.html"><i class="fa fa-send"></i> Pedidos</a></li>
                         <li><a href="contabilidad.html"><i class="fa fa-calculator"></i> Contabilidad</a></li>
 
@@ -262,18 +262,47 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Eliminar</h5>
+                            <h1 class="modal-title" id="exampleModalLongTitle">Eliminar</h1>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
                         </div>
                         <div class="modal-body">
 
-                            Estas Seguro que deseas Eliminar
+                            <p>Estas Seguro que deseas Eliminar</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Si</button>
+                            <button type="button" class="button" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="button">Si</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Modal de Detalles-->
+            <div class="modal fade" id="detalle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title" id="exampleModalLongTitle">Detalles del Producto</h1>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="text-center">
+                                <img src="images/slider-bg-01.jpg" alt="">
+                            </div>
+                            <div class="info text-center">
+                                <h3>Nombre: <span>Nombre del producto</span></h3>
+                                <h3>Color: <span>Verde</span></h3>
+                                <h3>Talla: <span>Grande</span></h3>
+                                <h3>Precio-Mayoreo: <span>$345</span></h3>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="button" data-dismiss="modal">Cerrar</button>
+
                         </div>
                     </div>
                 </div>
@@ -284,7 +313,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Editar</h5>
+                            <h1 class="modal-title" id="exampleModalLongTitle">Editar producto</h1>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -319,8 +348,8 @@
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Si</button>
+                            <button type="button" class="button" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="button">Si</button>
                         </div>
                     </div>
                 </div>
@@ -396,7 +425,7 @@
 
                                     <td><a href="" class="" data-toggle="modal" data-target="#exampleModalCenter"><i class="sl sl-icon-trash fa-2x"></i></a></td>
                                     <td><a href="" data-toggle="modal" data-target="#editar" data-whatever="@mdo"><i class="fa fa-edit fa-2x"></i></a></td>
-                                    <td><a href=""><i class="sl sl-icon-info fa-2x"></i></a></td>
+                                    <td><a href="" data-toggle="modal" data-target="#detalle" data-whatever="@mdo"><i class="sl sl-icon-info fa-2x"></i></a></td>
 
                                 </tr>
 
